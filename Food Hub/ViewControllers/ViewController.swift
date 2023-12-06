@@ -8,9 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var nameTextFieald: UITextField!
-    @IBOutlet weak var emailTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
+  
+  
+    
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var skipGoogle: UIButton!
     @IBOutlet weak var skipFacebook: UIButton!
@@ -39,24 +39,7 @@ class ViewController: UIViewController {
         signUpButton?.layer.shadowOpacity = 0.2
         signUpButton?.layer.shadowRadius = 8.0
         signUpButton?.layer.masksToBounds = false
-        
-        passwordTextfield?.layer.shadowColor = UIColor.lightGray.cgColor
-        passwordTextfield?.layer.shadowOffset = CGSize(width: 0, height: 5.0)
-        passwordTextfield?.layer.shadowOpacity = 0.1
-        passwordTextfield?.layer.shadowRadius = 8.0
-        passwordTextfield?.layer.masksToBounds = false
-        
-        emailTextfield?.layer.shadowColor = UIColor.lightGray.cgColor
-        emailTextfield?.layer.shadowOffset = CGSize(width: 0, height: 5.0)
-        emailTextfield?.layer.shadowOpacity = 0.1
-        emailTextfield?.layer.shadowRadius = 8.0
-        emailTextfield?.layer.masksToBounds = false
-        
-        nameTextFieald?.layer.shadowColor = UIColor.lightGray.cgColor
-        nameTextFieald?.layer.shadowOffset = CGSize(width: 0, height: 5.0)
-        nameTextFieald?.layer.shadowOpacity = 0.1
-        nameTextFieald?.layer.shadowRadius = 8.0
-        nameTextFieald?.layer.masksToBounds = false
+     
         
 
     }
