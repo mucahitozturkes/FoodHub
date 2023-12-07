@@ -18,50 +18,120 @@ class VerificationViewController: UIViewController, UITextFieldDelegate {
     let customColor = UIColor(hex: 0xFF7252)
     var selectedTextField: UITextField?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        skipButtonUI()
-        textfield1.delegate = self
-        textfield2.delegate = self
-        textfield3.delegate = self
-        textfield4.delegate = self
-        
-        textfield1.tag = 0
-        textfield2.tag = 1
-        textfield3.tag = 2
-        textfield4.tag = 3
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-                view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func handleTap() {
-        // Boş bir yere tıklandığında klavyeyi kapat
-        view.endEditing(true)
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        // Seçilen TextField'in sınır rengini değiştir
-        selectedTextField = textField
-        selectedTextField?.layer.borderColor = customColor.cgColor
-        selectedTextField?.layer.borderWidth = 1.0
+    // Enumeration for TextField tags
+    enum TextFieldTag: Int {
+        case textfield1 = 0
+        case textfield2
+        case textfield3
+        case textfield4
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // Seçilen TextField'in sınır rengini eski haline getir
-        selectedTextField?.layer.borderColor = nil
-        selectedTextField?.layer.borderWidth = 0.0
-        selectedTextField = nil
-    }
     
-    @IBAction func SignUpButton(_ sender: Any) {
-        print("Re-send")
+    override func viewDidLoad() {
+          super.viewDidLoad()
+          setupUI()
+          setupTextFields()
+      }
+    
+    func setupUI() {
+            skipButtonUI()
+        }
+
+    func setupTextFields() {
+        let textFields: [UITextField] = [textfield1, textfield2, textfield3, textfield4]
+
+        for (index, textField) in textFields.enumerated() {
+            textField.delegate = self
+            textField.tag = index
+        }
+
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
     }
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+
+
+
+     @objc func handleTap() {
+         view.endEditing(true)
+     }
+
+     func resetTextFieldStyles() {
+         for textField in [textfield1, textfield2, textfield3, textfield4] {
+             textField?.layer.borderColor = nil
+             textField?.layer.borderWidth = 0.0
+         }
+     }
+
+     func setActiveTextFieldStyle(_ textField: UITextField) {
+         textField.layer.borderColor = customColor.cgColor
+         textField.layer.borderWidth = 1.0
+     }
+
+     func textFieldDidBeginEditing(_ textField: UITextField) {
+         setActiveTextFieldStyle(textField)
+         selectedTextField = textField
+         // Clear the text when the text field is selected
+            textField.text = ""
+     }
+
+     func textFieldDidEndEditing(_ textField: UITextField) {
+         resetTextFieldStyles()
+         selectedTextField = nil
+     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Allow only numeric characters
+        let allowedCharacterSet = CharacterSet(charactersIn: "0123456789")
+        let stringCharacterSet = CharacterSet(charactersIn: string)
+
+        if stringCharacterSet.isSubset(of: allowedCharacterSet) {
+            // Check if the new length will be 1, otherwise, return false
+            let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+            
+            if currentText.count == 1 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    // Move to the next text field if available
+                    if let nextTextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
+                        nextTextField.becomeFirstResponder()
+                    } else {
+                        textField.resignFirstResponder() // Dismiss the keyboard if it's the last text field
+                    }
+                }
+                return true
+            }
+        }
+
+        return false
+    }
+
+
+
+
+
+
+
+
+
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+         if let nextTextField = view.viewWithTag(textField.tag + 1) as? UITextField {
+             nextTextField.becomeFirstResponder()
+         } else {
+             textField.resignFirstResponder()
+         }
+         return true
+     }
+
+        @IBAction func SignUpButton(_ sender: Any) {
+            print("Re-send")
+        }
+
+        @IBAction func backButtonTapped(_ sender: UIButton) {
+            dismiss(animated: true, completion: nil)
         }
     
     func skipButtonUI() {
+        
+        
         
         textfield1?.layer.shadowColor = UIColor.lightGray.cgColor
         textfield1?.layer.shadowOffset = CGSize(width: 0, height: 5.0)

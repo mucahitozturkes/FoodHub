@@ -17,6 +17,8 @@
 		08856D432B20CFAA00466AAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08856D422B20CFAA00466AAB /* LoginViewController.swift */; };
 		08B18E6C2B21B18A00470A35 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B18E6B2B21B18A00470A35 /* VerificationViewController.swift */; };
 		08B18E6E2B21B6D900470A35 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B18E6D2B21B6D900470A35 /* ResetPasswordViewController.swift */; };
+		08B18E752B21F7AA00470A35 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B18E732B21F7AA00470A35 /* registerViewController.swift */; };
+		08B18E762B21F7AA00470A35 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B18E742B21F7AA00470A35 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		08856D422B20CFAA00466AAB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		08B18E6B2B21B18A00470A35 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		08B18E6D2B21B6D900470A35 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		08B18E732B21F7AA00470A35 /* registerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
+		08B18E742B21F7AA00470A35 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				08856D422B20CFAA00466AAB /* LoginViewController.swift */,
 				08B18E6B2B21B18A00470A35 /* VerificationViewController.swift */,
 				08B18E6D2B21B6D900470A35 /* ResetPasswordViewController.swift */,
+				08B18E742B21F7AA00470A35 /* HomeViewController.swift */,
+				08B18E732B21F7AA00470A35 /* registerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,7 +183,9 @@
 				08B18E6C2B21B18A00470A35 /* VerificationViewController.swift in Sources */,
 				08856D2E2B205E3F00466AAB /* ViewController.swift in Sources */,
 				08856D2A2B205E3F00466AAB /* AppDelegate.swift in Sources */,
+				08B18E752B21F7AA00470A35 /* registerViewController.swift in Sources */,
 				08856D412B20CFA000466AAB /* SignUpViewController.swift in Sources */,
+				08B18E762B21F7AA00470A35 /* HomeViewController.swift in Sources */,
 				08856D432B20CFAA00466AAB /* LoginViewController.swift in Sources */,
 				08856D2C2B205E3F00466AAB /* SceneDelegate.swift in Sources */,
 				08B18E6E2B21B6D900470A35 /* ResetPasswordViewController.swift in Sources */,
