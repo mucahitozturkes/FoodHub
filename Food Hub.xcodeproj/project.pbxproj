@@ -74,7 +74,6 @@
 				08856D372B205E4000466AAB /* Info.plist */,
 				08856D3F2B205E7200466AAB /* Helper */,
 				08856D3E2B205E6100466AAB /* ViewControllers */,
-				08856D3D2B205E4D00466AAB /* Storyboards */,
 			);
 			path = "Food Hub";
 			sourceTree = "<group>";
@@ -96,8 +95,9 @@
 				08856D422B20CFAA00466AAB /* LoginViewController.swift */,
 				08B18E6B2B21B18A00470A35 /* VerificationViewController.swift */,
 				08B18E6D2B21B6D900470A35 /* ResetPasswordViewController.swift */,
-				08B18E742B21F7AA00470A35 /* HomeViewController.swift */,
 				08B18E732B21F7AA00470A35 /* registerViewController.swift */,
+				08B18E772B222F1100470A35 /* homeVC */,
+				08856D3D2B205E4D00466AAB /* Storyboards */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -107,6 +107,14 @@
 			children = (
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		08B18E772B222F1100470A35 /* homeVC */ = {
+			isa = PBXGroup;
+			children = (
+				08B18E742B21F7AA00470A35 /* HomeViewController.swift */,
+			);
+			path = homeVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
