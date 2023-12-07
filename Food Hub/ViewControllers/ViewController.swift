@@ -18,7 +18,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         skipButtonUI()
-       
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//                    // Ana ekranı göster
+//                    self.performSegue(withIdentifier: "ViewController", sender: self)
+//                }
     }
    
     func skipButtonUI() {

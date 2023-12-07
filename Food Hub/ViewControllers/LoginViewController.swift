@@ -20,8 +20,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      skipButtonUI()
+      
+        skipButtonUI()
         passwordTextfield.delegate = self
         emailTextfield.delegate = self
        
