@@ -7,9 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
-
+class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var searchTextfield: UITextField!
@@ -17,10 +15,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var deliverAdressLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var menuButton: UIButton!
-    
+    //collection view cell
     var foods = ["Burger", "Donat", "Pizza", "Mexican", "Asian", "Burger", "Donat", "Pizza", "Mexican", "Asian"]
     var foodsImages = ["Burger", "Donat", "Pizza", "Mexican", "Asian", "Burger", "Donat", "Pizza", "Mexican", "Asian"]
-    
+    //second collection veiw cell
+    var rest = ["McDonald’s", "Dominos"]
+    var restImages = ["Burger2", "Burger2"]
+    var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,73 +82,99 @@ class HomeViewController: UIViewController {
    
     }
 
-}
-
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    
+/// Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        return cell
+        if indexPath.row == 0 {
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+            cell1.setupCollectionView()
+            return cell1
+        } else if indexPath.row == 1 {
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "SecondTableViewCell", for: indexPath) as! SecondTableViewCell
+            cell2.setupSecondCollectionView()
+            return cell2
+        }
+        return UITableViewCell()
     }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-}
-class Cell: UITableViewCell {
-   
-    
-}
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return foods.count
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CCell", for: indexPath) as! CCell
-        cell.CVlabel.text = foods[indexPath.row]
-
-        if let image = UIImage(named: foods[indexPath.row]) {
-            cell.image.image = image
+        if indexPath.row == 0 {
+            return 120 // İlk hücrenin yüksekliği
         } else {
-            // Handle the case where the image cannot be loaded
+            return 275 // İkinci hücrenin yüksekliği
         }
-
-        return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: collectionView.frame.width, height: 120
-            )
+
+/// Collection View
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let tableViewCell = collectionView.superview?.superview as? TableViewCell {
+            if collectionView == tableViewCell.collectionV1 {
+                return foods.count
+            }
+        } else if let secondTableViewCell = collectionView.superview?.superview as? SecondTableViewCell {
+            if collectionView == secondTableViewCell.collectionV2 {
+                return rest.count
+            }
         }
-}
-class CCell: UICollectionViewCell {
-    @IBOutlet weak var backgroundViewCell: UIView!
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var CVlabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configureUI()
+        return 2
     }
 
-    func configureUI() {
-        // Arkaplan görünümünün köşe yarıçapı ve gölge efekti
-        // Arkaplan görünümünün köşe yarıçapı ve gölge efekti
-               backgroundViewCell.layer.cornerRadius = 30.0
-               backgroundViewCell.layer.masksToBounds = false
-               backgroundViewCell.layer.shadowColor = UIColor.lightGray.cgColor
-               backgroundViewCell.layer.shadowOffset = CGSize(width: 0, height: 0)
-        backgroundViewCell.layer.shadowOpacity = 0.1
-               backgroundViewCell.layer.shadowRadius = 8.0
-               backgroundViewCell.layer.shadowPath = UIBezierPath(roundedRect: backgroundViewCell.bounds, cornerRadius: backgroundViewCell.layer.cornerRadius).cgPath
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let tableViewCell = collectionView.superview?.superview as? TableViewCell {
+            let accessV1 = tableViewCell.collectionV1
+            if (collectionView == accessV1) {
+                let cell1 = accessV1!.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell
 
-               // İmajın köşe yarıçapı ve gölge efekti
-        image.layer.cornerRadius = 25.0
-        image.layer.masksToBounds = true
-     
+                cell1?.titleLabel?.text = foods[indexPath.row] //cannot see label in List
+                cell1?.imageV1.image = UIImage(named: foodsImages[indexPath.row])
+                
+                return cell1!
+            }
+        } else if let secondTableViewCell = collectionView.superview?.superview as? SecondTableViewCell {
+            let accessV2 = secondTableViewCell.collectionV2
+            if (collectionView == accessV2) {
+                let cell2 = accessV2!.dequeueReusableCell(withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as? SecondCollectionViewCell
+            
+                cell2?.titleLabel?.text = rest[indexPath.row] //cannot see label in List
+                cell2?.imageV2.image = UIImage(named: restImages[indexPath.row])
+                
+                return cell2!
+            }
+        }
+        // Handle other cases or return a default cell
+        return UICollectionViewCell()
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+                let hexColor = 0xFE724C
+                let red = CGFloat((hexColor & 0xFF0000) >> 16) / 255.0
+                let green = CGFloat((hexColor & 0x00FF00) >> 8) / 255.0
+                let blue = CGFloat(hexColor & 0x0000FF) / 255.0
+
+                let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+
+                // Change the background color to orange when selected
+                cell.backgroundV1.backgroundColor = color
+                cell.titleLabel.textColor = .white
+                
+
+                selectedIndexPath = indexPath
+            }
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+                // Change the background color back to the original color when deselected
+                cell.backgroundV1.backgroundColor = .white
+                cell.titleLabel.textColor = .darkGray
+               
+                selectedIndexPath = nil
+            }
+        }
+   
 
 }
