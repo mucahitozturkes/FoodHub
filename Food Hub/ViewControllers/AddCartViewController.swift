@@ -19,7 +19,10 @@ class AddCartViewController: UIViewController {
         setupShadows()
     }
     
-
+    @IBAction func backButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func setupShadows() {
         backButtonV?.layer.shadowColor = UIColor.lightGray.cgColor
         backButtonV?.layer.shadowOffset = CGSize(width: 0, height: 5.0)
