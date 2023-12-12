@@ -19,8 +19,11 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     var foods = ["Burger", "Donat", "Pizza", "Mexican", "Asian", "Burger", "Donat", "Pizza", "Mexican", "Asian"]
     var foodsImages = ["Burger", "Donat", "Pizza", "Mexican", "Asian", "Burger", "Donat", "Pizza", "Mexican", "Asian"]
     //second collection veiw cell
-    var rest = ["McDonald’s", "Dominos"]
-    var restImages = ["Burger2", "Burger2"]
+    var rest = ["McDonald’s", "Dominos", "McDonald’s", "Dominos"]
+    var restImages = ["Burger2", "Donat2", "Burger2", "Donat2"]
+    //third items
+    var popular = ["1", "2", "3"]
+    
     var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
@@ -84,7 +87,7 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 
 /// Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,6 +99,10 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "SecondTableViewCell", for: indexPath) as! SecondTableViewCell
             cell2.setupSecondCollectionView()
             return cell2
+        } else if indexPath.row == 2 {
+            let cell3 = tableView.dequeueReusableCell(withIdentifier: "ThirdTableViewCell", for: indexPath) as! ThirdTableViewCell
+            cell3.setupSecondCollectionView()
+            return cell3
         }
         return UITableViewCell()
     }
@@ -103,8 +110,10 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 120 // İlk hücrenin yüksekliği
-        } else {
+        } else if indexPath.row == 1{
             return 275 // İkinci hücrenin yüksekliği
+        } else {
+            return 200 // üçüncü hücrenin yüksekliği
         }
     }
 
@@ -119,16 +128,19 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             if collectionView == secondTableViewCell.collectionV2 {
                 return rest.count
             }
+        } else if let thirdTableViewCell = collectionView.superview?.superview as? ThirdTableViewCell {
+            if collectionView == thirdTableViewCell.collectionV3 {
+                return popular.count
+            }
         }
-        return 2
+        return 3
     }
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let tableViewCell = collectionView.superview?.superview as? TableViewCell {
             let accessV1 = tableViewCell.collectionV1
             if (collectionView == accessV1) {
                 let cell1 = accessV1!.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell
-
+                
                 cell1?.titleLabel?.text = foods[indexPath.row] //cannot see label in List
                 cell1?.imageV1.image = UIImage(named: foodsImages[indexPath.row])
                 
@@ -138,16 +150,25 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             let accessV2 = secondTableViewCell.collectionV2
             if (collectionView == accessV2) {
                 let cell2 = accessV2!.dequeueReusableCell(withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as? SecondCollectionViewCell
-            
+                
                 cell2?.titleLabel?.text = rest[indexPath.row] //cannot see label in List
                 cell2?.imageV2.image = UIImage(named: restImages[indexPath.row])
                 
                 return cell2!
             }
+        } else if let thirdTableViewCell = collectionView.superview?.superview as? ThirdTableViewCell {
+            let accessV3 = thirdTableViewCell.collectionV3
+            if (collectionView == accessV3) {
+                let cell3 = accessV3!.dequeueReusableCell(withReuseIdentifier: "ThirdCollectionViewCell", for: indexPath) as? ThirdCollectionViewCell
+                
+                cell3?.imageV2?.image = UIImage(named: restImages[indexPath.row])
+                
+                return cell3!
+            }
         }
-        // Handle other cases or return a default cell
         return UICollectionViewCell()
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
                 let hexColor = 0xFE724C

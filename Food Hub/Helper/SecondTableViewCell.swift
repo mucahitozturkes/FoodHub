@@ -22,7 +22,6 @@ class SecondTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
   
-    //
             func setupSecondCollectionView() {
                 collectionV2.register(SecondCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
             }

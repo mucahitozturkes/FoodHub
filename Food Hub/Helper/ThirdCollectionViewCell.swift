@@ -1,5 +1,5 @@
 //
-//  SecondCollectionViewCell.swift
+//  ThirdCollectionViewCell.swift
 //  Food Hub
 //
 //  Created by mücahit öztürk on 11.12.2023.
@@ -7,8 +7,7 @@
 
 import UIKit
 
-class SecondCollectionViewCell: UICollectionViewCell {
-    
+class ThirdCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var startView: UIView!
     @IBOutlet weak var backView3: UIView!
     @IBOutlet weak var backView2: UIView!
@@ -40,12 +39,12 @@ class SecondCollectionViewCell: UICollectionViewCell {
         startView.layer.cornerRadius =  12
         startView.layer.masksToBounds = true
         
-        backview1.layer.cornerRadius = 5
-        backview1.layer.masksToBounds = true
-        backView2.layer.cornerRadius = 5
-        backView2.layer.masksToBounds = true
-        backView3.layer.cornerRadius = 5
-        backView3.layer.masksToBounds = true
+        backview1?.layer.cornerRadius = 5
+        backview1?.layer.masksToBounds = true
+        backView2?.layer.cornerRadius = 5
+        backView2?.layer.masksToBounds = true
+        backView3?.layer.cornerRadius = 5
+        backView3?.layer.masksToBounds = true
         
         heartView.layer.cornerRadius = 20
         heartView.layer.masksToBounds = true

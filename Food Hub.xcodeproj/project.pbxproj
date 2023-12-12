@@ -23,6 +23,8 @@
 		08B18EB22B27134400470A35 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B18EB12B27134400470A35 /* SecondTableViewCell.swift */; };
 		08B18EB42B27210400470A35 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B18EB32B27210400470A35 /* CollectionViewCell.swift */; };
 		08B18EB62B27211100470A35 /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B18EB52B27211100470A35 /* SecondCollectionViewCell.swift */; };
+		08CEDBEF2B275DD6008F3C69 /* ThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CEDBEE2B275DD6008F3C69 /* ThirdCollectionViewCell.swift */; };
+		08CEDBF12B28217B008F3C69 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CEDBF02B28217B008F3C69 /* ThirdTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		08B18EB12B27134400470A35 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
 		08B18EB32B27210400470A35 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		08B18EB52B27211100470A35 /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		08CEDBEE2B275DD6008F3C69 /* ThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCollectionViewCell.swift; sourceTree = "<group>"; };
+		08CEDBF02B28217B008F3C69 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +127,10 @@
 			children = (
 				08B18EAF2B2711F500470A35 /* TableViewCell.swift */,
 				08B18EB12B27134400470A35 /* SecondTableViewCell.swift */,
+				08CEDBF02B28217B008F3C69 /* ThirdTableViewCell.swift */,
 				08B18EB32B27210400470A35 /* CollectionViewCell.swift */,
 				08B18EB52B27211100470A35 /* SecondCollectionViewCell.swift */,
+				08CEDBEE2B275DD6008F3C69 /* ThirdCollectionViewCell.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -200,7 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08CEDBEF2B275DD6008F3C69 /* ThirdCollectionViewCell.swift in Sources */,
 				08B18EB22B27134400470A35 /* SecondTableViewCell.swift in Sources */,
+				08CEDBF12B28217B008F3C69 /* ThirdTableViewCell.swift in Sources */,
 				08B18EB62B27211100470A35 /* SecondCollectionViewCell.swift in Sources */,
 				08B18E6C2B21B18A00470A35 /* VerificationViewController.swift in Sources */,
 				08B18EB42B27210400470A35 /* CollectionViewCell.swift in Sources */,
