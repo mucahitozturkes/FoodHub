@@ -9,15 +9,11 @@ import UIKit
 
 class ThirdCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var startView: UIView!
-    @IBOutlet weak var backView3: UIView!
-    @IBOutlet weak var backView2: UIView!
-    @IBOutlet weak var backview1: UIView!
     @IBOutlet weak var heartView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var imageV2: UIImageView!
     @IBOutlet weak var backgroundV2: UIView!
     
+    @IBOutlet weak var starView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -39,12 +35,15 @@ class ThirdCollectionViewCell: UICollectionViewCell {
         startView.layer.cornerRadius =  12
         startView.layer.masksToBounds = true
         
-        backview1?.layer.cornerRadius = 5
-        backview1?.layer.masksToBounds = true
-        backView2?.layer.cornerRadius = 5
-        backView2?.layer.masksToBounds = true
-        backView3?.layer.cornerRadius = 5
-        backView3?.layer.masksToBounds = true
+        starView.layer.cornerRadius =  12
+        starView.layer.masksToBounds = true
+        starView.layer.shadowColor = UIColor.lightGray.cgColor
+        starView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        starView.layer.shadowOpacity = 1// Increase opacity for a more pronounced shadow
+        starView.layer.shadowRadius = 8.0 // Increase radius for a larger shadow
+        
+        
+
         
         heartView.layer.cornerRadius = 20
         heartView.layer.masksToBounds = true

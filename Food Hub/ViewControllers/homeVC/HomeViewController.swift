@@ -22,7 +22,7 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     var rest = ["McDonald’s", "Dominos", "McDonald’s", "Dominos"]
     var restImages = ["Burger2", "Donat2", "Burger2", "Donat2"]
     //third items
-    var popular = ["1", "2", "3"]
+    var popular = ["1", "2", "1", "2"]
     
     var selectedIndexPath: IndexPath?
     
@@ -113,7 +113,7 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         } else if indexPath.row == 1{
             return 275 // İkinci hücrenin yüksekliği
         } else {
-            return 200 // üçüncü hücrenin yüksekliği
+            return 300 // üçüncü hücrenin yüksekliği
         }
     }
 
@@ -161,7 +161,7 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             if (collectionView == accessV3) {
                 let cell3 = accessV3!.dequeueReusableCell(withReuseIdentifier: "ThirdCollectionViewCell", for: indexPath) as? ThirdCollectionViewCell
                 
-                cell3?.imageV2?.image = UIImage(named: restImages[indexPath.row])
+                cell3?.imageV2?.image = UIImage(named: popular[indexPath.row])
                 
                 return cell3!
             }
