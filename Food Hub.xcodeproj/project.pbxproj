@@ -25,6 +25,7 @@
 		08B18EB62B27211100470A35 /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B18EB52B27211100470A35 /* SecondCollectionViewCell.swift */; };
 		08CEDBEF2B275DD6008F3C69 /* ThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CEDBEE2B275DD6008F3C69 /* ThirdCollectionViewCell.swift */; };
 		08CEDBF12B28217B008F3C69 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CEDBF02B28217B008F3C69 /* ThirdTableViewCell.swift */; };
+		08F63C482B28A3F2009B506F /* AddCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F63C472B28A3F2009B506F /* AddCartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		08B18EB52B27211100470A35 /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		08CEDBEE2B275DD6008F3C69 /* ThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCollectionViewCell.swift; sourceTree = "<group>"; };
 		08CEDBF02B28217B008F3C69 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
+		08F63C472B28A3F2009B506F /* AddCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				08B18E6B2B21B18A00470A35 /* VerificationViewController.swift */,
 				08B18E6D2B21B6D900470A35 /* ResetPasswordViewController.swift */,
 				08B18E732B21F7AA00470A35 /* registerViewController.swift */,
+				08F63C472B28A3F2009B506F /* AddCartViewController.swift */,
 				08B18E772B222F1100470A35 /* homeVC */,
 				08856D3D2B205E4D00466AAB /* Storyboards */,
 			);
@@ -214,6 +217,7 @@
 				08B18EB42B27210400470A35 /* CollectionViewCell.swift in Sources */,
 				08856D2E2B205E3F00466AAB /* ViewController.swift in Sources */,
 				08856D2A2B205E3F00466AAB /* AppDelegate.swift in Sources */,
+				08F63C482B28A3F2009B506F /* AddCartViewController.swift in Sources */,
 				08B18E752B21F7AA00470A35 /* registerViewController.swift in Sources */,
 				08856D412B20CFA000466AAB /* SignUpViewController.swift in Sources */,
 				08B18EB02B2711F500470A35 /* TableViewCell.swift in Sources */,
