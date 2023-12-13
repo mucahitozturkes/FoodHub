@@ -1,5 +1,7 @@
 Flexible UI design compare with Iphone SE 3rd & 15 Pro Max
 ![homess](https://github.com/mucahitozturkes/FoodHub/assets/138803167/7b9b1987-b5aa-45ab-872f-fd723058a477)
+![cart](https://github.com/mucahitozturkes/FoodHub/assets/138803167/00ddde75-ef6e-4c1e-ac01-9c84423bd937)
+
 ![homes2](https://github.com/mucahitozturkes/FoodHub/assets/138803167/fbd82593-c1fa-4d0f-97a0-2d915b1991be)
 
 
