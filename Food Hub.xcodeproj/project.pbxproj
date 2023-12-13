@@ -27,6 +27,7 @@
 		08CEDBF12B28217B008F3C69 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CEDBF02B28217B008F3C69 /* ThirdTableViewCell.swift */; };
 		08F63C482B28A3F2009B506F /* AddCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F63C472B28A3F2009B506F /* AddCartViewController.swift */; };
 		08F63C4C2B299D96009B506F /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F63C4B2B299D96009B506F /* PopularViewController.swift */; };
+		08F63C502B29D8F9009B506F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F63C4F2B29D8F9009B506F /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		08CEDBF02B28217B008F3C69 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
 		08F63C472B28A3F2009B506F /* AddCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCartViewController.swift; sourceTree = "<group>"; };
 		08F63C4B2B299D96009B506F /* PopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
+		08F63C4F2B29D8F9009B506F /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				08856D422B20CFAA00466AAB /* LoginViewController.swift */,
 				08B18E6B2B21B18A00470A35 /* VerificationViewController.swift */,
 				08B18E6D2B21B6D900470A35 /* ResetPasswordViewController.swift */,
+				08F63C4F2B29D8F9009B506F /* CartViewController.swift */,
 				08B18E732B21F7AA00470A35 /* registerViewController.swift */,
 				08F63C4B2B299D96009B506F /* PopularViewController.swift */,
 				08F63C472B28A3F2009B506F /* AddCartViewController.swift */,
@@ -228,6 +231,7 @@
 				08856D432B20CFAA00466AAB /* LoginViewController.swift in Sources */,
 				08856D2C2B205E3F00466AAB /* SceneDelegate.swift in Sources */,
 				08F63C4C2B299D96009B506F /* PopularViewController.swift in Sources */,
+				08F63C502B29D8F9009B506F /* CartViewController.swift in Sources */,
 				08B18E6E2B21B6D900470A35 /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
