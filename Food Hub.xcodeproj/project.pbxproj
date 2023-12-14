@@ -28,6 +28,7 @@
 		08F63C482B28A3F2009B506F /* AddCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F63C472B28A3F2009B506F /* AddCartViewController.swift */; };
 		08F63C4C2B299D96009B506F /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F63C4B2B299D96009B506F /* PopularViewController.swift */; };
 		08F63C502B29D8F9009B506F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F63C4F2B29D8F9009B506F /* CartViewController.swift */; };
+		08F63C522B29DF53009B506F /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F63C512B29DF53009B506F /* OrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		08F63C472B28A3F2009B506F /* AddCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCartViewController.swift; sourceTree = "<group>"; };
 		08F63C4B2B299D96009B506F /* PopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
 		08F63C4F2B29D8F9009B506F /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		08F63C512B29DF53009B506F /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				08B18E6B2B21B18A00470A35 /* VerificationViewController.swift */,
 				08B18E6D2B21B6D900470A35 /* ResetPasswordViewController.swift */,
 				08F63C4F2B29D8F9009B506F /* CartViewController.swift */,
+				08F63C512B29DF53009B506F /* OrderViewController.swift */,
 				08B18E732B21F7AA00470A35 /* registerViewController.swift */,
 				08F63C4B2B299D96009B506F /* PopularViewController.swift */,
 				08F63C472B28A3F2009B506F /* AddCartViewController.swift */,
@@ -225,6 +228,7 @@
 				08856D2A2B205E3F00466AAB /* AppDelegate.swift in Sources */,
 				08F63C482B28A3F2009B506F /* AddCartViewController.swift in Sources */,
 				08B18E752B21F7AA00470A35 /* registerViewController.swift in Sources */,
+				08F63C522B29DF53009B506F /* OrderViewController.swift in Sources */,
 				08856D412B20CFA000466AAB /* SignUpViewController.swift in Sources */,
 				08B18EB02B2711F500470A35 /* TableViewCell.swift in Sources */,
 				08B18E762B21F7AA00470A35 /* HomeViewController.swift in Sources */,
