@@ -42,6 +42,7 @@ class OrderViewController: UIViewController {
     
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func segment1(_ sender: UIButton) {
         updateButtonAppearance(selectedButton: button1)
