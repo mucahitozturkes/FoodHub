@@ -71,6 +71,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0826794A2B2B04D2005A63D9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		08856D1D2B205E3E00466AAB = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +101,8 @@
 				08856D292B205E3F00466AAB /* AppDelegate.swift */,
 				08856D2B2B205E3F00466AAB /* SceneDelegate.swift */,
 				08856D372B205E4000466AAB /* Info.plist */,
-				08B18EAE2B2711DD00470A35 /* Helper */,
+				0826794A2B2B04D2005A63D9 /* Utils */,
+				08B18EAE2B2711DD00470A35 /* Cells */,
 				08856D3E2B205E6100466AAB /* ViewControllers */,
 			);
 			path = "Food Hub";
@@ -137,7 +145,7 @@
 			path = homeVC;
 			sourceTree = "<group>";
 		};
-		08B18EAE2B2711DD00470A35 /* Helper */ = {
+		08B18EAE2B2711DD00470A35 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				08B18EAF2B2711F500470A35 /* TableViewCell.swift */,
@@ -147,7 +155,7 @@
 				08B18EB52B27211100470A35 /* SecondCollectionViewCell.swift */,
 				08CEDBEE2B275DD6008F3C69 /* ThirdCollectionViewCell.swift */,
 			);
-			path = Helper;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

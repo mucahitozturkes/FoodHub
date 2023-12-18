@@ -8,13 +8,18 @@
 import UIKit
 
 class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet weak var gestureView: UIView!
+    @IBOutlet var popupView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    
+   
     @IBOutlet weak var searchTextfield: UITextField!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var deliverAdressLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var menuButton: UIButton!
+    
+    @IBOutlet weak var profileImages: UIImageView!
+    
     //collection view cell
     var foods = ["Burger", "Donat", "Pizza", "Mexican", "Asian", "Burger", "Donat", "Pizza", "Mexican", "Asian"]
     var foodsImages = ["Burger", "Donat", "Pizza", "Mexican", "Asian", "Burger", "Donat", "Pizza", "Mexican", "Asian"]
@@ -25,13 +30,78 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     var popular = ["1", "2", "1", "2"]
     
     var selectedIndexPath: IndexPath?
+   
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+            super.viewDidLoad()
+            skipButtonUI()
+            popupViewSetDims()
+            gestureView.frame = UIScreen.main.bounds
+            gestureView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+            gestureView.addGestureRecognizer(tapGesture)
+        }
+ 
+    func popupViewSetDims() {
+        profileImages.layer.cornerRadius = 45
+        profileImages.layer.masksToBounds = true
+    }
+    @IBAction func menuButton(_ sender: UIButton) {
+        animated(desiredView: gestureView)
+        animated(desiredView: popupView)
+        adjustPopupView(popupView: popupView, xPercentage: 60, yPercentage: 100)
 
-        skipButtonUI()
+    }
+
+
+
+
+
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        animateOut(desiredView: popupView)
+        animateOut(desiredView: gestureView)
+    }
+    func adjustPopupView(popupView: UIView, xPercentage: CGFloat, yPercentage: CGFloat) {
+        guard let backgroundView = popupView.superview else {
+            return // Make sure popupView has a superview
+        }
+
+        let newWidth = backgroundView.bounds.width * xPercentage / 100
+        let newHeight = backgroundView.bounds.height * yPercentage / 100
+
+        var frame = popupView.frame
+        frame.origin.x = 0  // Left-aligned
+        frame.origin.y = 0  // Positioned at the top
+        frame.size.width = newWidth
+        frame.size.height = newHeight
+
+        popupView.frame = frame
+    }
+
+    func animated(desiredView: UIView) {
+        let backgroundView = self.view!
+
+        backgroundView.addSubview(desiredView)
+        // Move the view off-screen to the left
+        desiredView.transform = CGAffineTransform(translationX: -backgroundView.bounds.width, y: 0)
+        desiredView.alpha = 0
+        desiredView.center = backgroundView.center
+
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1, y: 1)
+            desiredView.alpha = 1
+        })
     }
     
+    func animateOut(desiredView: UIView) {
+                    UIView.animate(withDuration: 0.3, animations: {
+        desiredView.transform = CGAffineTransform(translationX: -desiredView.bounds.width, y: 0)
+                    }, completion: { _ in
+        desiredView.removeFromSuperview()
+        })
+     }
+
+
     func skipButtonUI() {
         
        
@@ -135,6 +205,7 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         }
         return 3
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let tableViewCell = collectionView.superview?.superview as? TableViewCell {
             let accessV1 = tableViewCell.collectionV1
@@ -187,15 +258,15 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             }
         }
         
-        func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
-                // Change the background color back to the original color when deselected
-                cell.backgroundV1.backgroundColor = .white
-                cell.titleLabel.textColor = .darkGray
-               
-                selectedIndexPath = nil
-            }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+            // Change the background color back to the original color when deselected
+            cell.backgroundV1.backgroundColor = .white
+            cell.titleLabel.textColor = .darkGray
+            
+            selectedIndexPath = nil
         }
+    }
    
 
 }
