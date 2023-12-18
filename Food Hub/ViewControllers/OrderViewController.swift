@@ -19,14 +19,18 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var segmentV: UIView!
     var images = ["jimmy", "subway", "jimmy", "subway"]
     var imagesFirst = ["starbuck"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        segmentV.layer.cornerRadius = 30
+        setLayers()
+    }
+    
+    func setLayers() {
         let lightGreenishGrayColor = UIColor(red: 236/255, green: 241/255, blue: 240/255, alpha: 1.0)
         segmentV.layer.borderColor = lightGreenishGrayColor.cgColor
         segmentV.layer.borderWidth = 1.0
-        
         updateButtonAppearance(selectedButton: button1)
+        segmentV.layer.cornerRadius = 30
         button1.layer.cornerRadius = 23
         button2.layer.cornerRadius = 23
         profileImage.layer.cornerRadius = 12
@@ -36,10 +40,10 @@ class OrderViewController: UIViewController {
         backButton.layer.shadowRadius = 8.0
         backButton.layer.masksToBounds = false
     }
-    
-    
+  
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        
+        
     }
     @IBAction func segment1(_ sender: UIButton) {
         updateButtonAppearance(selectedButton: button1)

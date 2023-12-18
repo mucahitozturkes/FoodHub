@@ -30,37 +30,43 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     var popular = ["1", "2", "1", "2"]
     
     var selectedIndexPath: IndexPath?
-   
     
     override func viewDidLoad() {
             super.viewDidLoad()
             skipButtonUI()
             popupViewSetDims()
+        
+      gestureView.layer.masksToBounds = true
+
             gestureView.frame = UIScreen.main.bounds
             gestureView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
             gestureView.addGestureRecognizer(tapGesture)
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        visualEffectView.frame = gestureView.bounds
+        gestureView.addSubview(visualEffectView)
+     
         }
- 
+    // side menu dimensions
     func popupViewSetDims() {
         profileImages.layer.cornerRadius = 45
         profileImages.layer.masksToBounds = true
+        
     }
+    // menu button
     @IBAction func menuButton(_ sender: UIButton) {
+        tabBarController?.tabBar.isHidden = true
         animated(desiredView: gestureView)
         animated(desiredView: popupView)
         adjustPopupView(popupView: popupView, xPercentage: 60, yPercentage: 100)
 
     }
-
-
-
-
-
+    // side menu tap gesture
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
         animateOut(desiredView: popupView)
         animateOut(desiredView: gestureView)
     }
+    // side menu size
     func adjustPopupView(popupView: UIView, xPercentage: CGFloat, yPercentage: CGFloat) {
         guard let backgroundView = popupView.superview else {
             return // Make sure popupView has a superview
@@ -77,7 +83,7 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 
         popupView.frame = frame
     }
-
+    // side menu in
     func animated(desiredView: UIView) {
         let backgroundView = self.view!
 
@@ -92,15 +98,20 @@ class HomeViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             desiredView.alpha = 1
         })
     }
-    
+    // side menu out
     func animateOut(desiredView: UIView) {
-                    UIView.animate(withDuration: 0.3, animations: {
+        tabBarController?.tabBar.isHidden = false
+                    UIView.animate(withDuration: 0.1, animations: {
         desiredView.transform = CGAffineTransform(translationX: -desiredView.bounds.width, y: 0)
                     }, completion: { _ in
         desiredView.removeFromSuperview()
         })
      }
-
+    
+    @IBAction func unwindToPreviousScreen(_ sender: UIStoryboardSegue) {
+        animateOut(desiredView: popupView)
+        animateOut(desiredView: gestureView)
+    }
 
     func skipButtonUI() {
         

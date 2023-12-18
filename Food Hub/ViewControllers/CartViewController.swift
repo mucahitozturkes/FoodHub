@@ -8,21 +8,19 @@
 import UIKit
 
 class CartViewController: UIViewController {
-    @IBOutlet weak var backButton: UIButton!
-    
+ 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var applyView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         applyView.layer.cornerRadius = 30
         let lightGreenishGrayColor = UIColor(red: 236/255, green: 241/255, blue: 240/255, alpha: 1.0)
         applyView.layer.borderColor = lightGreenishGrayColor.cgColor
         applyView.layer.borderWidth = 1.0
 
     }
+ 
     
-
   
 }
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {

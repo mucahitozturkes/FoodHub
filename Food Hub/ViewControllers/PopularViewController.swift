@@ -17,13 +17,15 @@ class PopularViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     setShadowButtons()
+    }
+    func setShadowButtons() {
         backButtonV.layer.shadowColor = UIColor.lightGray.cgColor
         backButtonV.layer.shadowOffset = CGSize(width: 0, height: 3)
         backButtonV.layer.shadowOpacity = 0.1// Increase opacity for a more pronounced shadow
         backButtonV.layer.shadowRadius = 4.0 // Increase radius for a larger shadow
-     
     }
-    
     @IBAction func backButtonPRessed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
