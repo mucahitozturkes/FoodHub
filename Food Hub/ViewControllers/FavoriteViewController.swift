@@ -8,7 +8,7 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
-    @IBOutlet weak var backButton: UIButton!
+   
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button1: UIButton!
@@ -20,21 +20,14 @@ class FavoriteViewController: UIViewController {
         button1.layer.cornerRadius = 23
         button2.layer.cornerRadius = 23
         profileImage.layer.cornerRadius = 12
-        backButton.layer.shadowColor = UIColor.lightGray.cgColor
-        backButton.layer.shadowOffset = CGSize(width: 0, height: 5.0)
-        backButton.layer.shadowOpacity = 0.2
-        backButton.layer.shadowRadius = 8.0
-        backButton.layer.masksToBounds = false
+        
         updateButtonAppearance(selectedButton: button1)
-        segmentV.layer.cornerRadius = 30
+        segmentV.layer.cornerRadius = 25
         let lightGreenishGrayColor = UIColor(red: 236/255, green: 241/255, blue: 240/255, alpha: 1.0)
         segmentV.layer.borderColor = lightGreenishGrayColor.cgColor
         segmentV.layer.borderWidth = 1.0
     }
-    
-    @IBAction func backButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
+   
   
     @IBAction func segment1(_ sender: UIButton) {
         updateButtonAppearance(selectedButton: button1)

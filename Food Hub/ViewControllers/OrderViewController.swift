@@ -35,9 +35,6 @@ class OrderViewController: UIViewController {
         backButton.layer.shadowOpacity = 0.2
         backButton.layer.shadowRadius = 8.0
         backButton.layer.masksToBounds = false
-      // tableView.register(OrderCell.self, forCellReuseIdentifier: "OrderCell")
-       // tableView.register(OrderCell2.self, forCellReuseIdentifier: "OrderCell2")
-
     }
     
     
@@ -104,7 +101,7 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             return 250
         } else if indexPath.row >= 1 && indexPath.row <= images.count {
-            return 170
+            return 200
         }
         return 250
     }
