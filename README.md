@@ -1,11 +1,15 @@
 Flexible UI design compare with Iphone SE 3rd & 15 Pro Max
 ![homess](https://github.com/mucahitozturkes/FoodHub/assets/138803167/7b9b1987-b5aa-45ab-872f-fd723058a477)
+![side](https://github.com/mucahitozturkes/FoodHub/assets/138803167/69d498dd-6198-4443-af09-81d468c375d7)
+
 ![cart](https://github.com/mucahitozturkes/FoodHub/assets/138803167/00ddde75-ef6e-4c1e-ac01-9c84423bd937)
 ![popular](https://github.com/mucahitozturkes/FoodHub/assets/138803167/19d88893-420a-4f28-88b0-d8f4cc2b4ff0)
 ![cartt](https://github.com/mucahitozturkes/FoodHub/assets/138803167/c0babdfa-b495-412f-b68a-a1af605d66c4)
+![order](https://github.com/mucahitozturkes/FoodHub/assets/138803167/7d91a297-766a-4530-89f3-1f5ade76e440)
 
 ![homes2](https://github.com/mucahitozturkes/FoodHub/assets/138803167/fbd82593-c1fa-4d0f-97a0-2d915b1991be)
 
+![favorite](https://github.com/mucahitozturkes/FoodHub/assets/138803167/7b491b40-e654-468c-a82f-838cc8992003)
 
 ![Home](https://github.com/mucahitozturkes/FoodHub/assets/138803167/50cfb1f6-772e-4c7a-b6a8-b3bba7ef5e9f)
 ![3rt](https://github.com/mucahitozturkes/FoodHub/assets/138803167/4ac7f849-e32d-4d7a-abe8-50df45318ced)
